@@ -15,6 +15,6 @@ public interface MyComparator extends Comparator<Object>
 {
 
     @Override
-    int compare(Object o1, Object o2);
+    int compare(Object objA, Object objB);
     
 }

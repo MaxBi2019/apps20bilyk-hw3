@@ -36,9 +36,13 @@ class Student
     public boolean equals(Object obj)
     {
         if (this == obj)
+        {
             return true;
+        }
         if (obj == null)
+        {
             return false;
+        }
         if (obj instanceof Student)
         {
             Student student = (Student) obj;
@@ -52,7 +56,11 @@ class Student
     }
     @Override
     public String toString() {
-        return "Student{name=" + name + ", surname=" + surname + ", " + "GPA=" + GPA + ", year=" + year + '}';
+        return "Student{name=" + name
+                + ", surname=" + surname
+                + ", " + "GPA=" + GPA
+                + ", year=" + year
+                + '}';
     }
 
 }
