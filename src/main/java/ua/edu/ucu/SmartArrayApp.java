@@ -13,8 +13,8 @@ import ua.edu.ucu.smartarr.MapDecorator;
 
 public class SmartArrayApp
 {
-    private static final int minimalGPA = 4;
-    private static final int yearOfStudy = 2;
+    private static final int MINIMAL_GPA = 4;
+    private static final int STUDY_YEAR = 2;
 
     public static Integer[]
     filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers)
@@ -69,8 +69,8 @@ public class SmartArrayApp
             public boolean test(Object tested)
             {
                 Student student = ((Student) tested);
-                return student.getGPA() >= minimalGPA
-                        && student.getYear() == yearOfStudy;
+                return student.getGPA() >= MINIMAL_GPA
+                        && student.getYear() == STUDY_YEAR;
             }
         };
 
