@@ -9,7 +9,7 @@ public class BaseArray implements SmartArray
 
     public BaseArray(Object[] objects)
     {
-        this.objects = objects;
+        this.objects = Arrays.copyOf(objects, objects.length);
     }
 
     @Override
@@ -25,7 +25,8 @@ public class BaseArray implements SmartArray
     }
 
     @Override
-    public int size() {
+    public int size()
+    {
         return objects.length;
     }
 }

@@ -13,11 +13,12 @@ import ua.edu.ucu.smartarr.MapDecorator;
 
 public class SmartArrayApp
 {
-    private static int minimalGPA = 4;
-    private static int yearOfStudy = 2;
+    private static final int minimalGPA = 4;
+    private static final int yearOfStudy = 2;
 
     public static Integer[]
-            filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers) {
+    filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers)
+    {
                 
         MyPredicate pr = new MyPredicate() {
             @Override
@@ -60,7 +61,8 @@ public class SmartArrayApp
     }
 
     public static String[]
-            findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(Student[] students) {
+    findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(Student[] students)
+    {
 
         MyPredicate predicate = new MyPredicate() {
             @Override
