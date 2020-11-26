@@ -19,12 +19,11 @@ public class MapDecorator extends SmartArrayDecorator
     private void apply(SmartArray array, MyFunction function)
     {
         Object[] objects = array.toArray();
-        this.array = new BaseArray(Arrays.copyOf(objects, objects.length));
-        objects = this.array.toArray();
         for (int ind = objects.length; ind > 0; --ind)
         {
             objects[ind-1] = function.apply(objects[ind-1]);
         }
+        this.array = new BaseArray(objects);
     }
 
     @Override

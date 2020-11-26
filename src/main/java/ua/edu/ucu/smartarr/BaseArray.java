@@ -15,7 +15,7 @@ public class BaseArray implements SmartArray
     @Override
     public Object[] toArray()
     {
-        return objects;
+        return Arrays.copyOf(objects, size());
     }
 
     @Override

@@ -20,8 +20,8 @@ public class SortDecorator extends SmartArrayDecorator
     private void sort(SmartArray array, MyComparator comparator)
     {
         Object[] objects = array.toArray();
-        this.array = new BaseArray(Arrays.copyOf(objects, objects.length));
-        Arrays.sort(this.array.toArray(), comparator);
+        Arrays.sort(objects, comparator);
+        this.array = new BaseArray(objects);
     }
 
     @Override
