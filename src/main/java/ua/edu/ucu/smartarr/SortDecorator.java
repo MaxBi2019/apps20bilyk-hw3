@@ -9,11 +9,11 @@ public class SortDecorator extends SmartArrayDecorator
 {
     private SmartArray array;
 
-    public SortDecorator(SmartArray array,
+    public SortDecorator(SmartArray smartArray,
                          MyComparator comparator)
     {
-        super(array);
-        sort(array, comparator);
+        super(smartArray);
+        sort(smartArray, comparator);
 
     }
 

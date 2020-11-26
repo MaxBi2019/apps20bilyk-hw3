@@ -7,10 +7,10 @@ public class FilterDecorator extends SmartArrayDecorator
 {
     private SmartArray array;
 
-    public FilterDecorator(SmartArray array, MyPredicate predicate)
+    public FilterDecorator(SmartArray smartArray, MyPredicate predicate)
     {
-        super(array);
-        filter(array, predicate);
+        super(smartArray);
+        filter(smartArray, predicate);
     }
 
     private void filter(SmartArray array, MyPredicate predicate)

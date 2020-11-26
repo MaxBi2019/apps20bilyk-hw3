@@ -54,11 +54,11 @@ public class SmartArrayApp {
         return Arrays.copyOf(result, result.length, Integer[].class);
     }
 
+    static private int minimalGPA = 4;
+    static private int yearOfStudy = 2;
+
     public static String[]
             findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(Student[] students) {
-
-        int minimalGPA = 4;
-        int yearOfStudy = 2;
 
         MyPredicate predicate = new MyPredicate() {
             @Override

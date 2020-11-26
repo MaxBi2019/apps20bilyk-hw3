@@ -7,10 +7,10 @@ public class DistinctDecorator extends SmartArrayDecorator
 {
     private SmartArray array;
 
-    public DistinctDecorator(SmartArray array)
+    public DistinctDecorator(SmartArray smartArray)
     {
-        super(array);
-        makeUnique(array);
+        super(smartArray);
+        makeUnique(smartArray);
     }
 
 

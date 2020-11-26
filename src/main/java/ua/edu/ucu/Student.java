@@ -35,8 +35,20 @@ class Student
     @Override
     public boolean equals(Object obj)
     {
-        Student student = (Student) obj;
-        return GPA == student.GPA && year == student.year && name == student.name && surname == student.surname;
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (obj instanceof Student)
+        {
+            Student student = (Student) obj;
+            return GPA == student.GPA
+                    && year == student.year
+                    && name == student.name
+                    && surname == student.surname;
+        }
+        return false;
+
     }
     @Override
     public String toString() {

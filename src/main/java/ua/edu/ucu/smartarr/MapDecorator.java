@@ -1,19 +1,17 @@
 package ua.edu.ucu.smartarr;
-
 import ua.edu.ucu.functions.MyFunction;
 
-import java.util.Arrays;
 
 // Map every element to another object using MyFunction
 public class MapDecorator extends SmartArrayDecorator
 {
     private SmartArray array;
 
-    public MapDecorator(SmartArray array,
+    public MapDecorator(SmartArray smartArray,
                         MyFunction function)
     {
-        super(array);
-        apply(array, function);
+        super(smartArray);
+        apply(smartArray, function);
     }
 
     private void apply(SmartArray array, MyFunction function)
