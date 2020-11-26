@@ -17,11 +17,11 @@ public class SortDecorator extends SmartArrayDecorator
 
     }
 
-    private void sort(SmartArray array, MyComparator comparator)
+    private void sort(SmartArray arr, MyComparator comparator)
     {
-        Object[] objects = array.toArray();
+        Object[] objects = arr.toArray();
         Arrays.sort(objects, comparator);
-        this.array = new BaseArray(objects);
+        array = new BaseArray(objects);
     }
 
     @Override

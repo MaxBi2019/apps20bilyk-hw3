@@ -14,18 +14,18 @@ public class DistinctDecorator extends SmartArrayDecorator
     }
 
 
-    private void makeUnique(SmartArray array)
+    private void makeUnique(SmartArray arr)
     {
-        Object[] objects = array.toArray();
+        Object[] objects = arr.toArray();
         Object[] unique  = new Object[objects.length];
         boolean isUnique;
         int index = 0;
-        for (int ind_1 = objects.length; ind_1 > 0; --ind_1)
+        for (int indA = objects.length; indA > 0; --indA)
         {
             isUnique = true;
-            for (int ind_2 = ind_1-1; ind_2 > 0; --ind_2)
+            for (int indB = indA-1; indB > 0; --indB)
             {
-                if (objects[ind_1-1].equals(objects[ind_2-1]))
+                if (objects[indA-1].equals(objects[indB-1]))
                 {
                     isUnique = false;
                     break;
@@ -33,9 +33,9 @@ public class DistinctDecorator extends SmartArrayDecorator
             }
             if (isUnique)
             {
-                unique[index++] = objects[ind_1-1];
+                unique[index++] = objects[indA-1];
             }
-            this.array = new BaseArray(Arrays.copyOf(unique, index));
+            array = new BaseArray(Arrays.copyOf(unique, index));
         }
 
     }

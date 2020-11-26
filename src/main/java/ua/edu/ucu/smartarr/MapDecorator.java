@@ -14,14 +14,14 @@ public class MapDecorator extends SmartArrayDecorator
         apply(smartArray, function);
     }
 
-    private void apply(SmartArray array, MyFunction function)
+    private void apply(SmartArray arr, MyFunction function)
     {
-        Object[] objects = array.toArray();
+        Object[] objects = arr.toArray();
         for (int ind = objects.length; ind > 0; --ind)
         {
             objects[ind-1] = function.apply(objects[ind-1]);
         }
-        this.array = new BaseArray(objects);
+        array = new BaseArray(objects);
     }
 
     @Override

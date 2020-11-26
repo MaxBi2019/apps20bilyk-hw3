@@ -13,9 +13,9 @@ public class FilterDecorator extends SmartArrayDecorator
         filter(smartArray, predicate);
     }
 
-    private void filter(SmartArray array, MyPredicate predicate)
+    private void filter(SmartArray arr, MyPredicate predicate)
     {
-        Object[] objects = array.toArray();
+        Object[] objects = arr.toArray();
         int num = 0;
         Object[] filtered;
         for (int ind = objects.length; ind > 0; --ind)
@@ -38,7 +38,7 @@ public class FilterDecorator extends SmartArrayDecorator
                 filtered[num++] = obj;
             }
         }
-        this.array = new BaseArray(filtered);
+        array = new BaseArray(filtered);
     }
 
     @Override

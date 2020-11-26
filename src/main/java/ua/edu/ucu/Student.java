@@ -42,10 +42,10 @@ class Student
         if (obj instanceof Student)
         {
             Student student = (Student) obj;
-            return GPA == student.GPA
+            return Double.compare(GPA, student.GPA) == 0
                     && year == student.year
-                    && name == student.name
-                    && surname == student.surname;
+                    && name.equals(student.name)
+                    && surname.equals(student.surname);
         }
         return false;
 
