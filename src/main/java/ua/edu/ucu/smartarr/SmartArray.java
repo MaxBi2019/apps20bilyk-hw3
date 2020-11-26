@@ -1,6 +1,7 @@
 package ua.edu.ucu.smartarr;
 
-public interface SmartArray {
+public interface SmartArray
+{
 
     Object[] toArray(); // return array with SmartArray elements
 

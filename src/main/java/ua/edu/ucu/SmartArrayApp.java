@@ -4,6 +4,7 @@ import java.util.Arrays;
 import ua.edu.ucu.functions.MyComparator;
 import ua.edu.ucu.functions.MyFunction;
 import ua.edu.ucu.functions.MyPredicate;
+import ua.edu.ucu.smartarr.*;
 
 public class SmartArrayApp {
 
@@ -51,9 +52,36 @@ public class SmartArrayApp {
     public static String[]
             findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(Student[] students) {
 
-        // Hint: to convert Object[] to String[] - use the following code
-        //Object[] result = studentSmartArray.toArray();
-        //return Arrays.copyOf(result, result.length, String[].class);
-        return null;
+        MyPredicate pr = new MyPredicate() {
+            @Override
+            public boolean test(Object t)
+            {
+                Student student = ((Student) t);
+                return student.getGPA() >= 4 && student.getYear() == 2;
+            }
+        };
+
+        MyComparator cmp = new MyComparator() {
+            @Override
+            public int compare(Object o1, Object o2)
+            {
+                Student student1 = (Student) o1;
+                Student student2 = (Student) o2;
+                return (student1.getSurname() + student1.getName()).compareTo(student2.getSurname() + student2.getName());
+            }
+        };
+        SmartArray sa = new BaseArray(students);
+        sa = new DistinctDecorator(sa);
+        sa = new FilterDecorator(sa, pr);
+        sa = new SortDecorator(sa, cmp);
+        String[] result = new String[sa.size()];
+        int index = 0;
+        Student cur;
+        for (Object obj: sa.toArray())
+        {
+            cur = (Student) obj;
+            result[index++] = cur.getSurname() + " " + cur.getName();
+        }
+        return result;
     }
 }
